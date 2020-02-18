@@ -1,2 +1,2 @@
 <?php
-echo 'veebitest' ;
+require_once '../app/bootstrap.php' ;
