@@ -25,19 +25,23 @@ class Users extends Controller
             );
             // validate name
             if(empty($data['name'])){
-                $data['name_err'] = 'Please enter a name';
+                $data['name_err'] = 'Please enter the name';
             }
             // validate email
             if(empty($data['email'])){
-                $data['email_err'] = 'Please enter an email';
+                $data['email_err'] = 'Please enter the email';
             }
             // validate password
             if(empty($data['pass'])){
-                $data['pass_err'] = 'Please enter a password';
+                $data['pass_err'] = 'Please enter the password';
+            } else if(strlen($data['pass']) < 6){
+                $data['pass_err'] = 'Password must be at least 6 characters';
             }
-            // validate password2
+            // validate password confirmation
             if(empty($data['pass2'])){
-                $data['pass2_err'] = 'Please enter the password again';
+                $data['pass2_err'] = 'Please enter the confirm password';
+            } else if($data['pass'] != $data['pass2']){
+                $data['pass2_err'] = 'Passwords do not match';
             }
             echo '<pre>';
             print_r($data);
