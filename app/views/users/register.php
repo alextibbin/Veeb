@@ -7,19 +7,19 @@
             <form action="<?php echo URLROOT;?>/users/register" method="post">
                 <div class="form-group">
                     <label for="name">Name: <sup>*</sup></label>
-                    <input type="text" id="name" class="form-control">
+                    <input type="text" id="name" class="form-control" name="name">
                 </div>
                 <div class="form-group">
                     <label for="email">Email: <sup>*</sup></label>
-                    <input type="text" id="email" class="form-control">
+                    <input type="text" id="email" class="form-control" name="email">
                 </div>
                 <div class="form-group">
-                    <label for="password">Password: <sup>*</sup></label>
-                    <input type="password" id="password" class="form-control">
+                    <label for="pass">Password: <sup>*</sup></label>
+                    <input type="password" id="pass" class="form-control" name="pass">
                 </div>
                 <div class="form-group">
-                    <label for="password2">Confirm Password: <sup>*</sup></label>
-                    <input type="password" id="password2" class="form-control">
+                    <label for="pass2">Confirm Password: <sup>*</sup></label>
+                    <input type="password" id="pass2" class="form-control" name="pass2">
                 </div>
                 <div class="row">
                     <div class="col">
