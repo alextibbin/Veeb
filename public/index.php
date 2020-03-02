@@ -10,8 +10,8 @@ $db = new Database();
 //        'pass=:pass ';
 //
 //$db->query($sql);
-//$db->bind(':name', 'Anna Karutina');
-//$db->bind(':email', 'anna@host.loc');
+//$db->bind(':name', 'Alex Egert Tibbin');
+//$db->bind(':email', 'alex@host.loc');
 //$db->bind(':pass', 'qwerty');
 //$db->execute();
 $sql = 'SELECT * FROM users WHERE id=:id';

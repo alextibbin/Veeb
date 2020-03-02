@@ -38,8 +38,4 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 -- Dumping data for table `users`
 --
-
-INSERT INTO `users` (`id`, `name`, `email`, `pass`, `created_at`) VALUES
-(1, 'Alex Egert Tibbin', 'alex-egert.tibbn@khk.ee', 'qwerty', '2020-02-26 09:43:48');
-SET FOREIGN_KEY_CHECKS=1;
 COMMIT;

@@ -3,6 +3,10 @@
 
 class Users extends Controller
 {
+    public function __construct(){
+        $this->userModel = $this->model('User');
+    }
+
     public function login(){
         $this->view('users/login');
     }
@@ -30,6 +34,8 @@ class Users extends Controller
             // validate email
             if(empty($data['email'])){
                 $data['email_err'] = 'Please enter the email';
+            } else if($this->userModel->findUserByEmail($data['email'])){
+                $data['email_err'] = 'Email is already taken';
             }
             // validate password
             if(empty($data['pass'])){
