@@ -37,9 +37,7 @@ class Users extends Controller
                     $data['pass_err'] = 'Password is incorrect';
                     $this->view('users/login', $data);
                 } else {
-                    echo '<pre>';
-                    print_r($loggedInUser);
-                    echo '</pre>';
+                    $this->createUserSession($loggedInUser);
                 }
             } else {
                 // load view with errors
@@ -94,7 +92,7 @@ class Users extends Controller
                 $data['pass'] = password_hash($data['pass'], PASSWORD_DEFAULT);
                 // register user
                 if($this->userModel->register($data)){
-                    header('Location: '.URLROOT.'/users/login');
+                    redirect('users/login');
                 } else {
                     die('Sometrhing went wrong');
                 }
@@ -104,5 +102,18 @@ class Users extends Controller
         } else {
             $this->view('users/register');
         }
+    }
+    // create session
+    public function createUserSession($user){
+        $_SESSION['user_id'] = $user->id;
+        $_SESSION['user_name'] = $user->name;
+        $_SESSION['user_email'] = $user->email;
+        redirect();
+    }
+    // logout user
+    public function logout(){
+        session_unset();
+        session_destroy();
+        redirect();
     }
 }
