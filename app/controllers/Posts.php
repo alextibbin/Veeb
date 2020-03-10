@@ -3,7 +3,16 @@
 
 class Posts extends Controller
 {
+    private $postModel;
+
+    public function __construct()
+    {
+        $this->postModel = $this->model('Post');
+    }
+
     public function index(){
-        $this->view('posts/index');
-}
+        $posts=$this->postModel->getAllPosts();
+        $data = $posts;
+        $this->view('posts/index',$data);
+    }
 }
