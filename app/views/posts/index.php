@@ -1,9 +1,10 @@
 <?php require_once APPROOT.'/views/inc/header.php';?>
 <?php flashShow('post_message');?>
+    <div class="col">
 <?php if(isset($_SESSION['user_id'])) :?>
     <a href="<?php echo URLROOT?>/posts/add" class="btn btn-dark">Add Post</a>
 <?php endif;?>
-    <div class="row mb-3">
+    <div >
         <div class="col">
             <h1>Posts</h1>
         </div>

@@ -15,6 +15,6 @@
       </textarea>
             <span class="invalid-feedback"><?php echo $data['content_err'];?></span>
         </div>
-        <input type="submit" value="Submit" class="btn btn-success">
+        <input type="submit" value="Submit" class="btn btn-dark">
     </form>
 <?php require_once APPROOT.'/views/inc/footer.php';?>
